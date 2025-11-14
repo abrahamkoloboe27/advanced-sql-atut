@@ -1,1 +1,51 @@
+# IDE and OS
 .idea/
+.vscode/
+.DS_Store
+Thumbs.db
+*~
+*.swp
+*.swo
+
+# Backups
+*.sql.bak
+backup*.sql
+*.dump
+
+# Logs
+*.log
+logs/
+
+# Docker
+.env
+
+# PostgreSQL
+*.pid
+
+# Build artifacts
+dist/
+build/
+*.pyc
+__pycache__/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Node modules (if using reveal.js for slides)
+node_modules/
+package-lock.json
+
+# Python virtual environment
+venv/
+env/
+.venv/
+
+# Archives
+*.zip
+*.tar.gz
+*.rar
+
+# Init file (large Chinook database - not needed anymore)
+init.sql
