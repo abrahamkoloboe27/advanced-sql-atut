@@ -14,6 +14,7 @@
 - [Prérequis](#-prérequis)
 - [Installation rapide](#-installation-rapide)
 - [Structure du projet](#-structure-du-projet)
+- [Slides de formation](#-slides-de-formation)
 - [Plan de la séance](#-plan-de-la-séance)
 - [Utilisation](#-utilisation)
 - [Exercices](#-exercices)
@@ -112,6 +113,64 @@ SELECT COUNT(*) FROM orders;     -- Devrait retourner 6
 
 ---
 
+## 📚 Slides de Formation
+
+Ce dépôt contient **27 slides au format Markdown** pour une formation complète de 3 heures sur SQL et PostgreSQL.
+
+### 📂 Contenu des slides
+
+**Dossier** : [`slides_md/`](slides_md/)
+
+Les slides couvrent :
+- **Fondamentaux** : SGBDR, SQL, familles DDL/DML/DCL/TCL (slides 00-05)
+- **DDL/DML** : Création et manipulation de données (slides 06-08)
+- **Transactions** : ACID, BEGIN/COMMIT/ROLLBACK (slides 09-10)
+- **SQL aujourd'hui** : Importance dans Big Data, Data Engineering (slide 11)
+- **Requêtes avancées** : SELECT, WHERE, GROUP BY, Fonctions, Jointures (slides 12-16)
+- **Techniques avancées** : CTE, UNION, Window Functions (slides 17-19)
+- **Performance** : EXPLAIN ANALYZE, Indexes, Views (slides 20-21)
+- **Production** : Optimisation, Sécurité, Migrations, Bonnes pratiques (slides 22-25)
+- **Pratique** : Exercices, Ressources (slides 26-27)
+
+### 🎯 Caractéristiques des slides
+
+Chaque slide contient :
+- ✅ Objectif pédagogique clair
+- ✅ Contenu théorique structuré
+- ✅ Exemple pratique avec données source
+- ✅ Requête SQL exécutable
+- ✅ Résultat en table Markdown
+- ✅ Notes pour le présentateur (démos, pièges, bonnes pratiques)
+
+### 🚀 Utilisation des slides
+
+**Pour formateurs** :
+```bash
+# Visualiser avec n'importe quel lecteur Markdown
+# GitHub, VS Code, Obsidian, etc.
+
+# Convertir en slides HTML/PDF avec Marp
+npm install -g @marp-team/marp-cli
+marp slides_md/*.md --html
+```
+
+**Pour participants** :
+- Lire directement sur GitHub : [`slides_md/README.md`](slides_md/README.md)
+- Cloner le repo et ouvrir avec votre éditeur Markdown préféré
+
+### 📖 Données de démonstration
+
+Les exemples des slides utilisent le fichier [`sql/seed.sql`](sql/seed.sql) :
+
+```bash
+# Charger les données d'exemple
+psql -h localhost -p 5433 -U pguser -d shop_db -f sql/seed.sql
+```
+
+Tables créées : `customers`, `products`, `orders` (≤ 5 lignes chacune, conçues pour les exemples pédagogiques)
+
+---
+
 ## 💻 Utilisation
 
 ### Exécuter les scripts SQL
@@ -146,6 +205,34 @@ Le dossier \`exercises/\` contient **6 exercices progressifs** :
 
 📖 **Voir** : [\`exercises/README.md\`](exercises/README.md)  
 ✅ **Solutions** : [\`solutions/\`](solutions/)
+
+---
+
+## 🤖 Comment utiliser ce repo avec GitHub Copilot
+
+Ce repository est optimisé pour l'apprentissage avec GitHub Copilot :
+
+### 💬 Questions à poser à Copilot
+- "Explique-moi cette requête SQL dans `sql/02_dml/select_queries.sql`"
+- "Comment optimiser cette requête avec un index ?"
+- "Quelle est la différence entre INNER JOIN et LEFT JOIN dans cet exemple ?"
+- "Génère une requête pour trouver les clients qui n'ont jamais commandé"
+- "Aide-moi à débugger cette erreur PostgreSQL"
+
+### 🔍 Navigation efficace
+- Utilisez `@workspace` pour poser des questions sur l'ensemble du repo
+- Référencez les slides : "Explique le concept de CTE dans `slides_md/17_cte_subqueries.md`"
+- Demandez des exemples : "Donne-moi un exemple de window function basé sur la table `orders`"
+
+### ✨ Génération de code
+- "Écris une requête pour analyser les ventes par catégorie"
+- "Crée une migration pour ajouter une colonne `discount` à la table `orders`"
+- "Génère un exercice SQL sur les agrégations"
+
+### 🎯 Conseils
+- Les slides contiennent des exemples exécutables → demandez des variations
+- Utilisez le contexte du `seed.sql` pour des requêtes réalistes
+- Copilot peut expliquer les plans EXPLAIN ANALYZE
 
 ---
 
