@@ -6,6 +6,7 @@
 -- ============================================================================
 -- PARTIE 1: INDEX - Optimisation des requêtes
 -- ============================================================================
+\c shop_db
 
 \echo '============================================================'
 \echo 'PARTIE 1: INDEX - Optimisation des performances'
@@ -200,7 +201,7 @@ COMMENT ON MATERIALIZED VIEW monthly_sales IS
 -- Exemple 4: Vue dans le schéma analytics
 -- ============================================================================
 \echo '4️⃣ Création de la vue analytics.product_performance...'
-
+CREATE SCHEMA analytics
 CREATE VIEW analytics.product_performance AS
 SELECT 
     p.product_id,

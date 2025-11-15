@@ -36,14 +36,13 @@ INSERT INTO customers (first_name, last_name, email, created_at) VALUES
 
 \echo '2️⃣ Insertion de produits...'
 
-INSERT INTO products (name, price, category, stock) VALUES
-    ('Ordinateur Portable', 899.99, 'Informatique', 15),
-    ('Souris Sans Fil', 29.99, 'Informatique', 50),
-    ('Clavier Mécanique', 79.99, 'Informatique', 30),
-    ('Écran 24 pouces', 199.99, 'Informatique', 20),
-    ('Webcam HD', 49.99, 'Informatique', 25),
-    ('Casque Audio', 59.99, 'Audio', 40);
-
+INSERT INTO  products (name, price, category, stock) VALUES
+    ('Laptop', 899.99, 'Electronics', 10),
+    ('Souris', 29.99, 'Electronics', 50),
+    ('Clavier', 79.99, 'Electronics', 30),
+    ('Écran', 249.99, 'Electronics', 20),
+    ('Casque', 59.99, 'Accessories', 40),
+    ('Webcam', 49.99, 'Accessories', 25);
 \echo '✅ 6 produits insérés!'
 \echo ''
 
@@ -99,7 +98,9 @@ SELECT * FROM orders ORDER BY order_id;
 \echo ''
 
 \echo '📈 Nombre total de clients:'
-SELECT COUNT(*) AS total_customers FROM customers;
+SELECT
+    COUNT(*) AS total_customers
+FROM customers;
 
 \echo ''
 \echo '📈 Nombre total de produits:'

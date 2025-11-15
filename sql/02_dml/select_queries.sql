@@ -12,7 +12,7 @@
 -- Mot-clé: SELECT
 -- Description: Récupère des données depuis une ou plusieurs tables
 -- Clauses: WHERE, JOIN, GROUP BY, HAVING, ORDER BY, LIMIT, OFFSET
--- ============================================================================
+-- ================================================================================
 
 
 -- PARTIE 1: SELECT SIMPLES
@@ -31,13 +31,17 @@ SELECT * FROM customers;
 
 -- Exemple 2: Sélectionner des colonnes spécifiques
 \echo '2️⃣ Sélectionner nom et email des clients:'
-SELECT first_name, last_name, email FROM customers;
+SELECT
+    first_name,
+    last_name,
+    email
+FROM customers;
 
 \echo ''
 
 -- Exemple 3: SELECT avec WHERE (filtrage)
 \echo '3️⃣ Clients dont le nom commence par M:'
-SELECT * FROM customers WHERE last_name LIKE 'M%';
+SELECT * FROM customers WHERE last_name LIKE '%M%';
 
 \echo ''
 
@@ -160,7 +164,8 @@ SELECT
     o.total_amount,
     o.status
 FROM orders o
-INNER JOIN customers c ON o.customer_id = c.customer_id
+INNER JOIN customers c
+ON o.customer_id = c.customer_id
 ORDER BY o.order_date;
 
 \echo ''

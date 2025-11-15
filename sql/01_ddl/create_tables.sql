@@ -10,6 +10,8 @@
 -- Syntaxe: CREATE TABLE nom_table (colonne1 type [contrainte], ...)
 -- ============================================================================
 
+CREATE  DATABASE shop_db;
+\c shop_db
 -- Table 1: CUSTOMERS (Clients)
 -- ============================================================================
 -- Stocke les informations des clients de la boutique

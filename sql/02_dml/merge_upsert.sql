@@ -223,8 +223,7 @@ SELECT * FROM product_updates;
 \echo '(Si erreur "MERGE not supported", utiliser INSERT ON CONFLICT à la place)'
 \echo ''
 
--- Tentative de MERGE (commenté car peut ne pas être supporté)
-/*
+
 MERGE INTO products p
 USING product_updates pu ON p.product_id = pu.product_id
 WHEN MATCHED THEN
@@ -235,7 +234,7 @@ WHEN MATCHED THEN
 WHEN NOT MATCHED THEN
     INSERT (product_id, name, price, category, stock)
     VALUES (pu.product_id, pu.name, pu.price, pu.category, pu.stock);
-*/
+
 
 \echo '💡 Alternative avec INSERT ... ON CONFLICT (compatible toutes versions):'
 \echo ''

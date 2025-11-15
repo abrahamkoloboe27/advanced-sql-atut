@@ -22,7 +22,6 @@
 -- COMMENT ON DATABASE shop_db IS 'Base de données fictive pour séance pratique SQL';
 
 -- Connexion à la base shop_db
-\c shop_db;
 
 -- ============================================================================
 -- Création du schéma public (existe par défaut dans PostgreSQL)
